@@ -1,0 +1,87 @@
+---
+const events = [
+	{
+		date: "2024-01-20",
+		name: "Noche de Jazz en Vivo",
+		description: "Con el Cuarteto Blue Note"
+	},
+	{
+		date: "2024-01-27",
+		name: "Karaoke Night",
+		description: "¡Canta tus canciones favoritas!"
+	},
+	{
+		date: "2024-02-03",
+		name: "Cata de Tequilas",
+		description: "Degustación de tequilas premium"
+	}
+];
+---
+
+<section id="events" class="events">
+	<h2>Próximos Eventos</h2>
+	<div class="events-grid">
+		{events.map(event => (
+			<div class="event-card">
+				<div class="event-date">
+					{new Date(event.date).toLocaleDateString('es-CO', {
+						month: 'short',
+						day: 'numeric'
+					})}
+				</div>
+				<h3>{event.name}</h3>
+				<p>{event.description}</p>
+			</div>
+		))}
+	</div>
+</section>
+
+<style>
+	.events {
+		padding: 4rem 2rem;
+		background: linear-gradient(to bottom, var(--brown), var(--black));
+	}
+
+	h2 {
+		color: var(--yellow);
+		font-size: 3rem;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.events-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.event-card {
+		background: rgba(255, 255, 255, 0.05);
+		padding: 2rem;
+		border-radius: 12px;
+		border: 1px solid var(--red);
+		transition: transform 0.3s ease;
+	}
+
+	.event-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.event-date {
+		color: var(--yellow);
+		font-weight: bold;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+	}
+
+	.event-card h3 {
+		color: white;
+		margin-bottom: 1rem;
+	}
+
+	.event-card p {
+		color: var(--gray);
+	}
+</style>

@@ -1,0 +1,119 @@
+---
+---
+
+<section class="gallery">
+	<div class="section-title">
+		<div class="ornament left"></div>
+		<h2>Galería</h2>
+		<div class="ornament right"></div>
+	</div>
+	<div class="gallery-grid">
+		<div class="gallery-item">
+			<img src="http://imgfz.com/i/a7pgOGx.jpeg" alt="Bar ambiente">
+		</div>
+		<div class="gallery-item">
+			<img src="http://imgfz.com/i/jQofsAJ.png" alt="Bebidas especiales">
+		</div>
+		<div class="gallery-item">
+			<img src="http://imgfz.com/i/uKlSEf4.png" alt="Cocteles">
+		</div>
+		<div class="gallery-item">
+			<img src="http://imgfz.com/i/F3ylRCA.png" alt="Ambiente nocturno">
+		</div>
+		<div class="gallery-item">
+			<img src="http://imgfz.com/i/NHBR0zO.png" alt="Cerveza artesanal">
+		</div>
+		<div class="gallery-item">
+			<img src="http://imgfz.com/i/LOduZfe.png" alt="Bar interior">
+		</div>
+	</div>
+</section>
+
+<style>
+	.gallery {
+		padding: 6rem 2rem;
+		background: var(--bg-gradient);
+	}
+
+	.section-title {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 4rem;
+		gap: 2rem;
+	}
+
+	.ornament {
+		width: 100px;
+		height: 2px;
+		background: linear-gradient(to var(--direction, right), transparent, var(--yellow));
+		position: relative;
+	}
+
+	.ornament::before, .ornament::after {
+		content: '';
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		border: 2px solid var(--yellow);
+		transform: rotate(45deg);
+	}
+
+	.ornament.left {
+		--direction: right;
+	}
+
+	.ornament.left::before {
+		left: 0;
+		top: -5px;
+	}
+
+	.ornament.right {
+		--direction: left;
+	}
+
+	.ornament.right::after {
+		right: 0;
+		top: -5px;
+	}
+
+	h2 {
+		color: var(--yellow);
+		font-size: 3rem;
+		text-align: center;
+		margin: 0;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.gallery-item {
+		position: relative;
+		aspect-ratio: 1;
+		overflow: hidden;
+		border-radius: 8px;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+		transition: transform 0.3s ease;
+	}
+
+	.gallery-item:hover {
+		transform: scale(1.02);
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.gallery-item:hover img {
+		transform: scale(1.1);
+	}
+</style>

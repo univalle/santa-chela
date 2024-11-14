@@ -1,0 +1,247 @@
+---
+const products = [
+	{
+		category: "Cervezas Artesanales",
+		items: [
+			{ name: "IPA Loca", price: "15.000", rating: 4.8, image: "http://imgfz.com/i/NHBR0zO.png" },
+			{ name: "Stout Negra Noche", price: "16.000", rating: 4.7, image: "http://imgfz.com/i/F3ylRCA.png" },
+			{ name: "Rubia Dorada", price: "14.000", rating: 4.6, image: "http://imgfz.com/i/uKlSEf4.png" }
+		]
+	},
+	{
+		category: "Cócteles Signature",
+		items: [
+			{ name: "Secreto de Santa", price: "25.000", rating: 4.9, image: "http://imgfz.com/i/jQofsAJ.png" },
+			{ name: "Mula de Mezcal", price: "22.000", rating: 4.8, image: "http://imgfz.com/i/LOduZfe.png" },
+			{ name: "Amanecer Chelero", price: "23.000", rating: 4.7, image: "http://imgfz.com/i/a7pgOGx.jpeg" }
+		]
+	}
+];
+---
+
+<section id="products" class="products">
+	<h2>Nuestra Selección</h2>
+	
+	<div class="products-grid">
+		{products.map(category => (
+			<div class="category">
+				<h3>{category.category}</h3>
+				<div class="items">
+					{category.items.map(item => (
+						<div class="item">
+							<div class="item-image-container">
+								<img src={item.image} alt={item.name} class="item-image" />
+								<div class="item-overlay">
+									<div class="rating">
+										{"★".repeat(Math.floor(item.rating))}
+										<span class="rating-number">({item.rating})</span>
+									</div>
+								</div>
+							</div>
+							<div class="item-content">
+								<h4>{item.name}</h4>
+								<span class="price">$ {item.price}</span>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		))}
+	</div>
+
+	<div class="promotions">
+		<h3>Promociones</h3>
+		<div class="promo-cards">
+			<div class="promo-card">
+				<div class="promo-content">
+					<h4>Happy Hour</h4>
+					<p>2x1 en todas las cervezas de barril</p>
+					<span>Miércoles a Viernes 6pm-9pm</span>
+				</div>
+				<div class="promo-badge">2x1</div>
+			</div>
+			<div class="promo-card">
+				<div class="promo-content">
+					<h4>Jueves de Ladies</h4>
+					<p>50% off en cócteles</p>
+					<span>Todos los Jueves</span>
+				</div>
+				<div class="promo-badge">-50%</div>
+			</div>
+			<div class="promo-card">
+				<div class="promo-content">
+					<h4>Domingos Cheleros</h4>
+					<p>Balde de 5 cervezas nacionales</p>
+					<span>$ 45.000</span>
+				</div>
+				<div class="promo-badge">¡HOY!</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.products {
+		padding: 6rem 2rem;
+		background: var(--bg-gradient);
+	}
+
+	h2 {
+		color: var(--yellow);
+		font-size: 3.5rem;
+		text-align: center;
+		margin-bottom: 4rem;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+	}
+
+	.products-grid {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 3rem;
+	}
+
+	.category h3 {
+		color: var(--red);
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+	}
+
+	.item {
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 16px;
+		margin-bottom: 2rem;
+		overflow: hidden;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+	}
+
+	.item:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+	}
+
+	.item-image-container {
+		position: relative;
+		overflow: hidden;
+		aspect-ratio: 16/9;
+	}
+
+	.item-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.item:hover .item-image {
+		transform: scale(1.1);
+	}
+
+	.item-overlay {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		padding: 1rem;
+		background: linear-gradient(transparent, rgba(0,0,0,0.8));
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.item:hover .item-overlay {
+		opacity: 1;
+	}
+
+	.item-content {
+		padding: 1.5rem;
+	}
+
+	.item-content h4 {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+		color: var(--yellow);
+	}
+
+	.price {
+		font-size: 1.2rem;
+		color: white;
+		font-weight: bold;
+	}
+
+	.rating {
+		color: var(--yellow);
+		font-size: 1rem;
+	}
+
+	.rating-number {
+		color: white;
+		margin-left: 0.5rem;
+	}
+
+	.promotions {
+		margin-top: 8rem;
+	}
+
+	.promotions h3 {
+		color: var(--yellow);
+		font-size: 3rem;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.promo-cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.promo-card {
+		background: linear-gradient(135deg, var(--red) 0%, #6D0919 100%);
+		padding: 2rem;
+		border-radius: 16px;
+		position: relative;
+		overflow: hidden;
+		transition: transform 0.3s ease;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+	}
+
+	.promo-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.promo-content h4 {
+		color: var(--yellow);
+		font-size: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.promo-content p {
+		margin: 0.5rem 0;
+		font-size: 1.3rem;
+		color: white;
+	}
+
+	.promo-badge {
+		position: absolute;
+		top: -25px;
+		right: -25px;
+		background: var(--yellow);
+		color: var(--brown);
+		padding: 2.5rem;
+		border-radius: 50%;
+		transform: rotate(15deg);
+		font-weight: bold;
+		font-size: 1.3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 70px;
+		height: 70px;
+		box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+	}
+</style>

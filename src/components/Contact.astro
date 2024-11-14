@@ -1,0 +1,121 @@
+---
+---
+
+<section id="contact" class="contact">
+	<h2>Visítanos</h2>
+	<div class="contact-grid">
+		<div class="info">
+			<div class="info-block">
+				<h3>Ubicación</h3>
+				<p>Calle 5, Belalcazar</p>
+				<p>Yumbo, Valle del Cauca</p>
+			</div>
+			
+			<div class="info-block">
+				<h3>Horario</h3>
+				<p>Miércoles a Domingo</p>
+				<p>6:00 PM - 3:00 AM</p>
+				<p>Lunes y Martes: Cerrado</p>
+			</div>
+
+			<div class="info-block">
+				<h3>Contacto</h3>
+				<p>Tel: (602) 123-4567</p>
+				<p>WhatsApp: +57 315 123-4567</p>
+				<p>Email: info@santachela.com</p>
+			</div>
+
+			<a href="#" class="whatsapp-group">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="whatsapp-icon">
+					<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
+				</svg>
+				Únete a nuestro grupo de WhatsApp
+			</a>
+		</div>
+		
+		<div class="map">
+			<iframe 
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.6699145903837!2d-76.4953!3d3.5307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a8d4d0000001%3A0x0!2sYumbo%2C+Valle+del+Cauca!5e0!3m2!1ses!2sco!4v1650000000000!5m2!1ses!2sco" 
+				width="100%" 
+				height="450" 
+				style="border:0;" 
+				allowfullscreen="" 
+				loading="lazy">
+			</iframe>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact {
+		padding: 4rem 2rem;
+		background: var(--black);
+	}
+
+	h2 {
+		color: var(--yellow);
+		font-size: 3rem;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.info-block {
+		margin-bottom: 2rem;
+		padding: 1.5rem;
+		background: rgba(123, 132, 132, 0.1);
+		border-radius: 12px;
+	}
+
+	.info-block h3 {
+		color: var(--red);
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+
+	.info-block p {
+		margin: 0.5rem 0;
+		color: var(--gray);
+	}
+
+	.whatsapp-group {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: #25D366;
+		color: white;
+		padding: 1rem 2rem;
+		border-radius: 8px;
+		text-decoration: none;
+		margin-top: 2rem;
+		transition: background-color 0.3s ease;
+	}
+
+	.whatsapp-group:hover {
+		background: #128C7E;
+	}
+
+	.whatsapp-icon {
+		width: 24px;
+		height: 24px;
+	}
+
+	.map {
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+	}
+
+	@media (max-width: 768px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
