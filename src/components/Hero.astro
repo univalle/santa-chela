@@ -1,9 +1,10 @@
----
----
-
 <section class="hero">
 	<div class="hero-content">
-		<img src="https://imgfz.com/i/jwadVGc.png" alt="Santa Chela Logo" class="logo">
+		<img
+			src="https://imgfz.com/i/jwadVGc.png"
+			alt="Santa Chela Logo"
+			class="logo"
+		/>
 		<h1>Santa Chela</h1>
 		<p>Donde los buenos momentos fluyen</p>
 	</div>
@@ -11,6 +12,7 @@
 </section>
 
 <style>
+	@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Corinthia:wght@400;700&family=Dancing+Script:wght@400..700&display=swap");
 	.hero {
 		height: 100vh;
 		position: relative;
@@ -23,7 +25,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-image: url('http://imgfz.com/i/sYte156.jpeg');
+		background-image: url("http://imgfz.com/i/sYte156.jpeg");
 		background-size: cover;
 		background-position: center;
 		filter: brightness(0.6);
@@ -49,15 +51,19 @@
 	}
 
 	h1 {
+		font-family: "Corinthia", cursive;
+		font-weight: 700;
+		font-style: normal;
 		font-size: 8rem;
 		color: var(--yellow);
 		margin: 0;
 		line-height: 1;
 		letter-spacing: 2px;
-		background: linear-gradient(45deg, var(--yellow), #fff, var(--yellow));
 		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		text-shadow: none;
+		text-shadow:
+			3px 3px 0px rgba(255, 0, 0, 0.8),
+			/* Sombra roja para el relieve */ 5px 5px 0px rgba(255, 0, 0, 0.6),
+			/* Relieve más marcado */ 7px 7px 10px rgba(0, 0, 0, 0.7); /* Sombra más difusa para profundidad */
 		animation: shine 3s ease-in-out infinite;
 	}
 
@@ -74,7 +80,7 @@
 		font-size: 2rem;
 		color: white;
 		margin: 1rem 0 0;
-		font-weight: 300;
+		font-weight: 700;
 	}
 
 	@media (max-width: 768px) {

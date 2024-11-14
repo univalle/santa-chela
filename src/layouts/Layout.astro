@@ -10,10 +10,20 @@ const { title } = Astro.props;
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Santa Chela Bar - El mejor ambiente y las mejores bebidas" />
+		<meta
+			name="description"
+			content="Santa Chela Bar - El mejor ambiente y las mejores bebidas"
+		/>
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href="https://imgfz.com/i/jwadVGc.png" />
-		<link href="https://fonts.googleapis.com/css2?family=Madrigal-Grotesque:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+		<link
+			rel="icon"
+			type="image/png"
+			href="https://imgfz.com/i/jwadVGc.png"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Madrigal-Grotesque:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -22,16 +32,17 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+	@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 	:root {
-		--yellow: #FCB040;
+		--yellow: #fcb040;
 		--black: #000000;
-		--brown: #1E140D;
-		--red: #A00E23;
-		--gray: #7B8484;
-		--bg-gradient: linear-gradient(135deg, #2A1B2E 0%, #1E140D 100%);
+		--brown: #1e140d;
+		--red: #a00e23;
+		--gray: #7b8484;
+		--bg-gradient: linear-gradient(135deg, #2a1b2e 0%, #1e140d 100%);
 	}
 	html {
-		font-family: 'Montserrat', sans-serif;
+		font-family: "Montserrat", sans-serif;
 		background: var(--bg-gradient);
 		color: white;
 		scroll-behavior: smooth;
@@ -40,8 +51,11 @@ const { title } = Astro.props;
 		margin: 0;
 		padding: 0;
 	}
-	h1, h2, h3, h4 {
-		font-family: 'Madrigal-Grotesque', serif;
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: "Bebas Neue", sans-serif;
 		margin: 0;
 	}
 
@@ -56,12 +70,17 @@ const { title } = Astro.props;
 	.ornament {
 		width: 100px;
 		height: 2px;
-		background: linear-gradient(to var(--direction, right), transparent, var(--yellow));
+		background: linear-gradient(
+			to var(--direction, right),
+			transparent,
+			var(--yellow)
+		);
 		position: relative;
 	}
 
-	.ornament::before, .ornament::after {
-		content: '';
+	.ornament::before,
+	.ornament::after {
+		content: "";
 		position: absolute;
 		width: 10px;
 		height: 10px;
