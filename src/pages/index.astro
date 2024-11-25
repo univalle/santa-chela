@@ -1,11 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Products from '../components/Products.astro';
-import Events from '../components/Events.astro';
-import Contact from '../components/Contact.astro';
-import Gallery from '../components/Gallery.astro';
-import SocialShare from '../components/SocialShare.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Products from "../components/Products.astro";
+import Events from "../components/Events.astro";
+import Contact from "../components/Contact.astro";
+import Gallery from "../components/Gallery.astro";
+import SocialShare from "../components/SocialShare.astro";
 ---
 
 <Layout title="Santa Chela Bar - The Best Drinks in Town">
@@ -24,3 +24,8 @@ import SocialShare from '../components/SocialShare.astro';
 		overflow: hidden;
 	}
 </style>
+
+<script>
+	import { productos } from "../utils/get-data";
+	console.log(productos);
+</script>

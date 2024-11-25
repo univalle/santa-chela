@@ -49,6 +49,48 @@ const products = [
 ];
 ---
 
+<script>
+	import { productos } from "../utils/get-data";
+	// console.log(productos);
+	// 	[
+	//     [
+	//         "\"Stout Negra Noche\"",
+	//         "\"$ 16.000\"",
+	//         "\"\"",
+	//         "\"4\"",
+	//         "\"Cervezas Artesanales\"",
+	//         "\"https://imgfz.com/i/NHBR0zO.png\""
+	//     ],
+	//     [
+	//         "\"Rubia Dorada\"",
+	//         "\"$ 14.000\"",
+	//         "\"\"",
+	//         "\"4\"",
+	//         "\"Cervezas Artesanales\"",
+	//         "\"https://imgfz.com/i/jQofsAJ.png\""
+	//     ],
+	//     [
+	//         "\"Secreto de Santa\"",
+	//         "\"$ 25.000\"",
+	//         "\"\"",
+	//         "\"4\"",
+	//         "\"Cócteles Signature\"",
+	//         "\"https://imgfz.com/i/LOduZfe.png\""
+	//     ],
+	//     [
+	//         "\"Mula de Mezcal\"",
+	//         "\"$ 22.000\"",
+	//         "\"\"",
+	//         "\"4\"",
+	//         "\"Cócteles Signature\"",
+	//         "\"https://imgfz.com/i/LOduZfe.png\""
+	//     ]
+	// ]
+
+	const categories = productos.map((product) => product[4]);
+	console.log(categories);
+</script>
+
 <section id="products" class="products">
 	<h2>Nuestra Selección</h2>
 
