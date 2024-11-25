@@ -49,86 +49,39 @@ const products = [
 ];
 ---
 
-<script>
-	import { productos } from "../utils/get-data";
-	// console.log(productos);
-	// 	[
-	//     [
-	//         "\"Stout Negra Noche\"",
-	//         "\"$ 16.000\"",
-	//         "\"\"",
-	//         "\"4\"",
-	//         "\"Cervezas Artesanales\"",
-	//         "\"https://imgfz.com/i/NHBR0zO.png\""
-	//     ],
-	//     [
-	//         "\"Rubia Dorada\"",
-	//         "\"$ 14.000\"",
-	//         "\"\"",
-	//         "\"4\"",
-	//         "\"Cervezas Artesanales\"",
-	//         "\"https://imgfz.com/i/jQofsAJ.png\""
-	//     ],
-	//     [
-	//         "\"Secreto de Santa\"",
-	//         "\"$ 25.000\"",
-	//         "\"\"",
-	//         "\"4\"",
-	//         "\"Cócteles Signature\"",
-	//         "\"https://imgfz.com/i/LOduZfe.png\""
-	//     ],
-	//     [
-	//         "\"Mula de Mezcal\"",
-	//         "\"$ 22.000\"",
-	//         "\"\"",
-	//         "\"4\"",
-	//         "\"Cócteles Signature\"",
-	//         "\"https://imgfz.com/i/LOduZfe.png\""
-	//     ]
-	// ]
-
-	const categories = productos.map((product) => product[4]);
-	console.log(categories);
-</script>
 
 <section id="products" class="products">
 	<h2>Nuestra Selección</h2>
 
 	<div class="products-grid">
-		{
-			products.map((category) => (
-				<div class="category">
-					<h3>{category.category}</h3>
-					<div class="items">
-						{category.items.map((item) => (
-							<div class="item">
-								<div class="item-image-container">
-									<img
-										src={item.image}
-										alt={item.name}
-										class="item-image"
-									/>
-									<div class="item-overlay">
-										<div class="rating">
-											{"★".repeat(
-												Math.floor(item.rating),
-											)}
-											<span class="rating-number">
-												({item.rating})
-											</span>
-										</div>
+		{products.map((category) => (
+			<div class="category">
+				<h3>{category.category}</h3>
+				<div class="items">
+					{category.items.map((item) => (
+						<div class="item">
+							<div class="item-image-container">
+								<img
+									src={item.image}
+									alt={item.name}
+									class="item-image"
+								/>
+								<div class="item-overlay">
+									<div class="rating">
+										{"★".repeat(Math.floor(item.rating))}
+										<span class="rating-number">({item.rating})</span>
 									</div>
 								</div>
-								<div class="item-content">
-									<h4>{item.name}</h4>
-									<span class="price">$ {item.price}</span>
-								</div>
 							</div>
-						))}
-					</div>
+							<div class="item-content">
+								<h4>{item.name}</h4>
+								<span class="price">$ {item.price}</span>
+							</div>
+						</div>
+					))}
 				</div>
-			))
-		}
+			</div>
+		))}
 	</div>
 
 	<div class="promotions">
@@ -162,168 +115,171 @@ const products = [
 	</div>
 </section>
 
+
 <style>
-	.products {
-		padding: 6rem 2rem;
-		background: var(--bg-gradient);
-	}
+.products {
+	padding: 6rem 2rem;
+	background: var(--bg-gradient);
+}
 
-	h2 {
-		color: var(--yellow);
-		font-size: 3.5rem;
-		text-align: center;
-		margin-bottom: 4rem;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-	}
+h2 {
+	color: var(--yellow);
+	font-size: 3.5rem;
+	text-align: center;
+	margin-bottom: 4rem;
+	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
 
-	.products-grid {
-		max-width: 1200px;
-		margin: 0 auto;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 3rem;
-	}
+.products-grid {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 3rem;
+}
 
-	.category h3 {
-		color: var(--red);
-		font-size: 2.5rem;
-		margin-bottom: 2rem;
-		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-	}
+.category h3 {
+	color: var(--red);
+	font-size: 2.5rem;
+	margin-bottom: 2rem;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
 
-	.item {
-		background: rgba(255, 255, 255, 0.05);
-		border-radius: 16px;
-		margin-bottom: 2rem;
-		overflow: hidden;
-		transition: all 0.3s ease;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-	}
+.item {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 16px;
+	margin-bottom: 2rem;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
 
-	.item:hover {
-		transform: translateY(-10px);
-		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-	}
+.item:hover {
+	transform: translateY(-12px);
+	box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
 
-	.item-image-container {
-		position: relative;
-		overflow: hidden;
-		aspect-ratio: 16/9;
-	}
+.item-image-container {
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 16/9;
+}
 
-	.item-image {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: transform 0.3s ease;
-	}
+.item-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
 
-	.item:hover .item-image {
-		transform: scale(1.1);
-	}
+.item:hover .item-image {
+	transform: scale(1.1);
+}
 
-	.item-overlay {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		padding: 1rem;
-		background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-		opacity: 0;
-		transition: opacity 0.3s ease;
-	}
+.item-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 1rem;
+	background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
 
-	.item:hover .item-overlay {
-		opacity: 1;
-	}
+.item:hover .item-overlay {
+	opacity: 1;
+}
 
-	.item-content {
-		padding: 1.5rem;
-	}
+.item-content {
+	padding: 1.5rem;
+}
 
-	.item-content h4 {
-		font-size: 1.5rem;
-		margin-bottom: 0.5rem;
-		color: var(--yellow);
-	}
+.item-content h4 {
+	font-size: 1.6rem;
+	margin-bottom: 0.5rem;
+	color: var(--yellow);
+}
 
-	.price {
-		font-size: 1.2rem;
-		color: white;
-		font-weight: bold;
-	}
+.price {
+	font-size: 1.2rem;
+	color: white;
+	font-weight: bold;
+}
 
-	.rating {
-		color: var(--yellow);
-		font-size: 1rem;
-	}
+.rating {
+	color: var(--yellow);
+	font-size: 1rem;
+}
 
-	.rating-number {
-		color: white;
-		margin-left: 0.5rem;
-	}
+.rating-number {
+	color: white;
+	margin-left: 0.5rem;
+}
 
-	.promotions {
-		margin-top: 8rem;
-	}
+.promotions {
+	margin-top: 8rem;
+}
 
-	.promotions h3 {
-		color: var(--yellow);
-		font-size: 3rem;
-		text-align: center;
-		margin-bottom: 3rem;
-	}
+.promotions h3 {
+	color: var(--yellow);
+	font-size: 3rem;
+	text-align: center;
+	margin-bottom: 3rem;
+}
 
-	.promo-cards {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 2rem;
-		max-width: 1200px;
-		margin: 0 auto;
-	}
+.promo-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+}
 
-	.promo-card {
-		background: linear-gradient(135deg, var(--red) 0%, #6d0919 100%);
-		padding: 2rem;
-		border-radius: 16px;
-		position: relative;
-		overflow: hidden;
-		transition: transform 0.3s ease;
-		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-	}
+.promo-card {
+	background: linear-gradient(135deg, var(--red) 0%, #6d0919 100%);
+	padding: 2.5rem;
+	border-radius: 16px;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.3s ease;
+	box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+}
 
-	.promo-card:hover {
-		transform: translateY(-5px);
-	}
+.promo-card:hover {
+	transform: translateY(-5px);
+}
 
-	.promo-content h4 {
-		color: var(--yellow);
-		font-size: 2rem;
-		margin-bottom: 1rem;
-	}
+.promo-content h4 {
+	color: var(--yellow);
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
 
-	.promo-content p {
-		margin: 0.5rem 0;
-		font-size: 1.3rem;
-		color: white;
-	}
+.promo-content p {
+	margin: 0.5rem 0;
+	font-size: 1.3rem;
+	color: white;
+}
 
-	.promo-badge {
-		position: absolute;
-		top: -25px;
-		right: -25px;
-		background: var(--yellow);
-		color: var(--brown);
-		padding: 2.5rem;
-		border-radius: 50%;
-		transform: rotate(15deg);
-		font-weight: bold;
-		font-size: 1.3rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 70px;
-		height: 70px;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-	}
+.promo-badge {
+	position: absolute;
+	top: -25px;
+	right: -25px;
+	background: var(--yellow);
+	color: var(--brown);
+	padding: 2.5rem;
+	border-radius: 50%;
+	transform: rotate(15deg);
+	font-weight: bold;
+	font-size: 1.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80px;
+	height: 80px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+
 </style>
