@@ -1,0 +1,108 @@
+<div class="promotions">
+    <h2>Promociones</h2>
+    <div class="promo-cards">
+        <div class="promo-card">
+            <div class="promo-content">
+                <h4>Happy Hour</h4>
+                <p>2x1 en todas las cervezas de barril</p>
+                <span>Miércoles a Viernes 6pm-9pm</span>
+            </div>
+            <div class="promo-badge">2x1</div>
+        </div>
+        <div class="promo-card">
+            <div class="promo-content">
+                <h4>Jueves de Ladies</h4>
+                <p>50% off en cócteles</p>
+                <span>Todos los Jueves</span>
+            </div>
+            <div class="promo-badge">-50%</div>
+        </div>
+        <div class="promo-card">
+            <div class="promo-content">
+                <h4>Domingos Cheleros</h4>
+                <p>Balde de 5 cervezas nacionales</p>
+                <span>$45.000</span>
+            </div>
+            <div class="promo-badge">¡HOY!</div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .promotions {
+        padding: 6rem 2rem;
+        text-align: center;
+    }
+
+    .promotions h2 {
+	color: var(--yellow);
+	font-size: 3rem;
+	text-align: center;
+	margin-bottom: 4rem;
+	text-shadow:
+		3px 3px 0px rgba(255, 0, 0, 0.8),
+		7px 7px 10px rgba(0, 0, 0, 0.7);
+}
+
+
+    .promo-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .promo-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .promo-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .promo-content h4 {
+        color: var(--yellow);
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .promo-content p {
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 0.5rem;
+    }
+
+    .promo-content span {
+        display: block;
+        color: #d3d3d3;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .promo-badge {
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        background: var(--yellow);
+        color: var(--brown);
+        padding: 1rem;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        opacity: 0.9;
+        transform: rotate(10deg);
+    }
+</style>
