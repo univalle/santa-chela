@@ -5,12 +5,14 @@
 			alt="Santa Chela Logo"
 			class="logo"
 		/>
-		<h1>Santa Chela</h1>
+		<h1>
+			<span class="santa">Santa</span><span class="chela">Chela</span>
+		</h1>
 		<p>Donde los buenos momentos fluyen</p>
 	</div>
 	<div class="hero-background">
 		<video autoplay muted loop class="background-video">
-			<source src="/video.webp" type="video/webp" />
+			<source src="/video.mp4" type="video/mp4" />
 			Tu navegador no soporta el formato de video.
 		</video>
 		<div class="overlay"></div>
@@ -18,7 +20,6 @@
 </section>
 
 <style>
-	@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Corinthia:wght@400;700&family=Dancing+Script:wght@400..700&display=swap");
 	.hero {
 		height: 100vh;
 		position: relative;
@@ -41,6 +42,8 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		filter: blur(4px); /* Desenfoque */
+		opacity: 0.7; /* Oscurecimiento */
 		z-index: 1;
 	}
 
@@ -50,7 +53,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: rgba(0, 0, 0, 0.4); /* Opacidad oscura */
+		background-color: rgba(0, 0, 0, 0.6); /* Opacidad adicional */
 		z-index: 2;
 	}
 
@@ -58,7 +61,7 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%) rotate(-5deg);
+		transform: translate(-50%, -50%);
 		z-index: 3;
 		text-align: center;
 		width: 100%;
@@ -66,46 +69,44 @@
 	}
 
 	.logo {
-		width: 200px;
+		width: 180px; /* Imagen más cerca de las letras */
 		height: auto;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 		filter: drop-shadow(0 0 20px rgba(252, 176, 64, 0.5));
 	}
 
 	h1 {
-		font-family: "Corinthia", cursive;
-		font-weight: 700;
+		font-weight: 100;
+		font-family: "Black", cursive;
 		font-style: normal;
 		font-size: 12rem;
 		color: var(--yellow);
 		margin: 0;
 		line-height: 1;
 		letter-spacing: 2px;
-		-webkit-background-clip: text;
 		text-shadow:
 			3px 3px 0px rgba(255, 0, 0, 0.8),
-			/* Sombra roja para el relieve */ 5px 5px 0px rgba(255, 0, 0, 0.6),
-			/* Relieve más marcado */ 7px 7px 10px rgba(0, 0, 0, 0.7); /* Sombra más difusa para profundidad */
-		animation: shine 3s ease-in-out infinite;
+			5px 5px 0px rgba(255, 0, 0, 0.6),
+			7px 7px 10px rgba(0, 0, 0, 0.7);
 	}
 
-	@keyframes shine {
-		0% {
-			background-position: -500%;
-		}
-		100% {
-			background-position: 500%;
-		}
+	.santa {
+		display: inline-block;
+		transform: rotate(5deg); /* Inclinación ligera de Santa */
+	}
+
+	.chela {
+		display: inline-block;
+		transform: rotate(-5deg); /* Inclinación ligera de Chela */
+		margin-left: -10px; /* Ajuste para pegar las letras */
 	}
 
 	p {
-		font-family: "Dancing Script", cursive;
-		font-weight: 400;
+		font-family: "Black", cursive;
 		font-style: normal;
 		font-size: 3rem;
 		color: white;
 		margin: 1rem 0 0;
-		font-weight: 700;
 	}
 
 	@media (max-width: 768px) {
