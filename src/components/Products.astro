@@ -66,6 +66,11 @@ const products = [
 									alt={item.name}
 									class="item-image"
 								/>
+	
+							</div>
+							<div class="item-content">
+								<h4>{item.name}</h4>
+								<span class="price">$ {item.price}</span>
 								<div class="">
 									<div class="rating">
 										{"★".repeat(Math.floor(item.rating))}
@@ -73,10 +78,7 @@ const products = [
 									</div>
 								</div>
 							</div>
-							<div class="item-content">
-								<h4>{item.name}</h4>
-								<span class="price">$ {item.price}</span>
-							</div>
+							
 						</div>
 					))}
 				</div>
@@ -123,13 +125,14 @@ const products = [
 }
 
 
-
 h2 {
 	color: var(--yellow);
-	font-size: 3.5rem;
+	font-size: 8rem;
 	text-align: center;
 	margin-bottom: 4rem;
-	text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+	text-shadow:
+		6px 6px 2px rgba(255, 0, 0, 0.8),
+		7px 7px 10px rgba(0, 0, 0, 0.7);
 }
 
 .products-grid {
@@ -142,10 +145,13 @@ h2 {
 }
 
 .category h3 {
-	color: var(--red);
-	font-size: 2.5rem;
+	color: var(--yellow);
+	font-size: 3rem;
 	margin-bottom: 2rem;
 	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+	text-shadow:
+		3px 3px 0px rgba(255, 0, 0, 0.8),
+		7px 7px 10px rgba(0, 0, 0, 0.7);
 }
 
 .item {
@@ -172,6 +178,7 @@ h2 {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	opacity: 0.5;
 	transition: transform 0.3s ease;
 }
 
@@ -210,16 +217,15 @@ h2 {
 }
 
 .price {
-	font-size: 1.2rem;
+	font-size: 2rem;
 	font-weight: bold;
 	color: white;
 }
 
 .rating {
 	color: var(--yellow);
-	font-size: 1rem;
+	font-size: 2rem;
 	margin-top: 1rem; /* Separar de la parte superior */
-	background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para la puntuación */
 	padding: 0.5rem;
 	border-radius: 8px;
 	display: inline-block;
