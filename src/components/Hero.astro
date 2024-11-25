@@ -1,14 +1,10 @@
 <section class="hero">
 	<div class="hero-content">
 		<img
-			src="https://imgfz.com/i/jwadVGc.png"
+			src="/svg/santachela3.svg"
 			alt="Santa Chela Logo"
 			class="logo"
 		/>
-		<h1>
-			<span class="santa">Santa</span>
-			<span class="chela">Chela</span>
-		</h1>
 		<p>Donde los buenos momentos fluyen</p>
 	</div>
 	<div class="hero-background">
@@ -18,118 +14,111 @@
 		</video>
 		<div class="overlay"></div>
 	</div>
+	<!-- Señal para desplazarse hacia abajo -->
+	<div class="scroll-indicator">
+		<span class="scroll-icon">
+		<img src="/svg/down.svg"
+		alt="Scroll down">	
+		</span> <!-- Flecha hacia abajo -->
+	</div>
 </section>
 
 <style>
 	.hero {
-	height: 100vh;
-	position: relative;
-	overflow: hidden;
-}
-
-.hero-background {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 1;
-}
-
-.background-video {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	position: absolute;
-	top: 0;
-	left: 0;
-	filter: blur(4px); /* Desenfoque */
-	opacity: 0.7; /* Oscurecimiento */
-	z-index: 1;
-}
-
-.overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.6); /* Opacidad adicional */
-	z-index: 2;
-}
-
-.hero-content {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	z-index: 3;
-	text-align: center;
-	width: 100%;
-	text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-.logo {
-	position: absolute;
-	top: -70px; /* Coloca el logo encima de "Santa" */
-	left: 50%;
-	transform: translateX(-50%); /* Centra el logo horizontalmente */
-	width: 180px; /* Imagen más cerca de las letras */
-	height: auto;
-	filter: drop-shadow(0 0 20px rgba(252, 176, 64, 0.5));
-}
-
-h1 {
-
-	font-weight: 100;
-	font-family: "Black", cursive;
-	font-style: normal;
-	font-size: 15rem;
-	color: var(--yellow);
-	margin: 0;
-	line-height: 1;
-	letter-spacing: 2px;
-	text-shadow:
-		8px 8px 3px rgba(255, 0, 0, 0.8),
-		5px 5px 0px rgba(255, 0, 0, 0.6),
-		7px 7px 10px rgba(0, 0, 0, 0.7);
-	position: relative; /* Hace que Santa sea el contenedor relativo */
-}
-
-.santa {
-	display: inline-block;
-	transform: rotate(-10deg); /* Inclinación ligera de Santa */
-	position: relative;
-	z-index: 3;
-}
-
-.chela {
-	display: inline-block;
-	transform: rotate(-10deg); /* Inclinación ligera de Chela */
-	position: absolute;
-	top: 75%; /* Lo coloca justo debajo de "Santa" */
-	left: 41%; /* Lo mueve ligeramente hacia la derecha */
-	z-index: 100;
-}
-
-p {
-	font-family: "Black", cursive;
-	font-style: normal;
-	font-size: 3rem;
-	color: white;
-	margin: 15rem 0 0;
-}
-
-@media (max-width: 768px) {
-	h1 {
-		font-size: 4rem;
+		height: 100vh;
+		position: relative;
+		overflow: hidden;
 	}
-	p {
-		font-size: 1.5rem;
+
+	.hero-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
 	}
+
+	.background-video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		filter: blur(4px); /* Desenfoque */
+		opacity: 0.7; /* Oscurecimiento */
+		z-index: 1;
+	}
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.6); /* Opacidad adicional */
+		z-index: 2;
+	}
+
+	.hero-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 3;
+		text-align: center;
+		width: 100%;
+		text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+	}
+
 	.logo {
-		width: 150px;
+		fill: white;
+		height: 400px;
+	}
+
+	p {
+		font-family: "Black", cursive;
+		font-style: normal;
+		font-size: 3rem;
+		color: white;
+	}
+
+	/* Estilo para la señal de desplazamiento */
+	.scroll-indicator {
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		color: white;
+		font-size: 1.5rem;
+		z-index: 4;
+		animation: bounce 1s infinite; /* Animación de rebote */
+	}
+
+	.scroll-icon {
+		font-size: 3rem;
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	@keyframes bounce {
+		0%, 100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+	}
+
+	@media (max-width: 768px) {
+	.logo {
+		height: 200px; /* Reduce el tamaño del logo */
+	}
+
+	p {
+		font-size: 2rem; /* Reduce el tamaño del texto */
 	}
 }
-
 </style>
