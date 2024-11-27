@@ -38,8 +38,7 @@ const events = [
 
 <style>
 	.events {
-		padding: 4rem 2rem;
-
+		padding: 6rem 2rem;
 	}
 
 	h2 {
@@ -61,18 +60,16 @@ const events = [
 	}
 
 	.event-card {
-		background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+		background: #040305;
 		padding: 2rem;
 		border-radius: 16px;
 		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 		transition: all 0.3s ease;
 		border: 1px solid rgba(255, 255, 255, 0.1);
-		backdrop-filter: blur(10px);
 	}
 
 	.event-card:hover {
-		transform: translateY(-8px) scale(1.02);
-		box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+		transform: scale(1.1);
 	}
 
 	.event-date {
@@ -89,7 +86,7 @@ const events = [
 	}
 
 	.event-card h3 {
-		color: white;
+		color: var(--white);
 		font-size: 1.5rem;
 		margin-bottom: 0.5rem;
 		font-weight: 100;

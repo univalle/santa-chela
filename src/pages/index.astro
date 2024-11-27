@@ -12,10 +12,14 @@ import Promotions from "../components/Promotions.astro";
 <Layout title="Santa Chela Bar - Donde los buenos momentos fluyen">
 	<main>
 		<Hero />
-		<Products />
-		<Events />
-		<Promotions />
-		<Gallery />
+		<div class="bg1">
+			<Products />
+			<Events />
+		</div>
+		<div class="bg2">
+			<Promotions />
+			<Gallery />
+		</div>
 		<Contact />
 		<SocialShare />
 	</main>
@@ -24,6 +28,15 @@ import Promotions from "../components/Promotions.astro";
 <style>
 	main {
 		overflow: hidden;
+	}
+
+	.bg1 {
+		background: url("/svg/bg3.svg") no-repeat center center/cover;
+		background-size: contain;
+	}
+	.bg2 {
+		background: url("/svg/bg4.svg") no-repeat center center/cover;
+		background-size: contain;
 	}
 </style>
 

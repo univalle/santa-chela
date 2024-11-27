@@ -92,8 +92,6 @@ const products = [
 <style>
 .products {
 	padding: 6rem 2rem;
-	background: 
-		var(--bg-gradient);  /* Gradiente de fondo (si ya tienes esta variable definida) */
 }
 h2 {
 	color: var(--yellow);
@@ -126,7 +124,7 @@ h3 {
 }
 
 .item {
-	background: rgba(255, 255, 255, 0.05);
+	background: rgb(0, 0, 0);
 	border-radius: 16px;
 	margin-bottom: 2rem;
 	overflow: hidden;
@@ -175,7 +173,7 @@ h3 {
 	left: 0;
 	right: 0;
 	padding: 1.5rem;
-	color: white; /* Texto blanco */
+	color: var(--white);
 	background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)); /* Gradiente sutil */
 	text-align: center;
 }
@@ -186,7 +184,7 @@ h3 {
 	font-family: 'Marker';
 	font-size: 1.6rem;
 	margin-bottom: 0.5rem;
-	color: white; /* Blanco */
+	color: var(--white);
 	text-decoration: none; /* Eliminar subrayado */
 }
 
@@ -195,7 +193,7 @@ h3 {
 	font-family: 'Marker';
 	font-size: 2rem;
 	font-weight: bold;
-	color: white;
+	color: var(--white);
 }
 
 .rating {
@@ -207,7 +205,7 @@ h3 {
 }
 
 .rating-number {
-	color: white;
+	color: var(--white);
 	font-size: 20px;
 	text-align: center;
 }
