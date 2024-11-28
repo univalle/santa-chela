@@ -1,226 +1,245 @@
 ---
 const products = [
-	{
-		category: "Cervezas Artesanales",
-		items: [
-			{
-				name: "IPA Loca",
-				price: "15.000",
-				rating: 4.8,
-				image: "http://imgfz.com/i/NHBR0zO.png",
-			},
-			{
-				name: "Stout Negra Noche",
-				price: "16.000",
-				rating: 4.7,
-				image: "http://imgfz.com/i/F3ylRCA.png",
-			},
-			{
-				name: "Rubia Dorada",
-				price: "14.000",
-				rating: 4.6,
-				image: "http://imgfz.com/i/uKlSEf4.png",
-			},
-		],
-	},
-	{
-		category: "Cócteles Signature",
-		items: [
-			{
-				name: "Secreto de Santa",
-				price: "25.000",
-				rating: 4.9,
-				image: "http://imgfz.com/i/jQofsAJ.png",
-			},
-			{
-				name: "Mula de Mezcal",
-				price: "22.000",
-				rating: 4.8,
-				image: "http://imgfz.com/i/LOduZfe.png",
-			},
-			{
-				name: "Amanecer Chelero",
-				price: "23.000",
-				rating: 4.7,
-				image: "http://imgfz.com/i/a7pgOGx.jpeg",
-			},
-		],
-	},
+    {
+        category: "Cervezas Artesanales",
+        items: [
+            {
+                name: "IPA Loca",
+                price: "15.000",
+                rating: 4.8,
+                image: "http://imgfz.com/i/NHBR0zO.png",
+            },
+            {
+                name: "Stout Negra Noche",
+                price: "16.000",
+                rating: 4.7,
+                image: "http://imgfz.com/i/F3ylRCA.png",
+            },
+            {
+                name: "Rubia Dorada",
+                price: "14.000",
+                rating: 4.6,
+                image: "http://imgfz.com/i/uKlSEf4.png",
+            },
+        ],
+    },
+    {
+        category: "Cócteles Signature",
+        items: [
+            {
+                name: "Secreto de Santa",
+                price: "25.000",
+                rating: 4.9,
+                image: "http://imgfz.com/i/jQofsAJ.png",
+            },
+            {
+                name: "Mula de Mezcal",
+                price: "22.000",
+                rating: 4.8,
+                image: "http://imgfz.com/i/LOduZfe.png",
+            },
+            {
+                name: "Amanecer Chelero",
+                price: "23.000",
+                rating: 4.7,
+                image: "http://imgfz.com/i/a7pgOGx.jpeg",
+            },
+        ],
+    },
 ];
 ---
 
-
 <section id="products" class="products">
-	<h2>Nuestra selección</h2>
+    <h2>Nuestra selección</h2>
 
-	<div class="products-grid">
-		{products.map((category) => (
-			<div class="category">
-				<h3>{category.category}</h3>
-				<div class="items">
-					{category.items.map((item) => (
-						<div class="item">
-							<div class="item-image-container">
-								<img
-									src={item.image}
-									alt={item.name}
-									class="item-image"
-								/>
-	
-							</div>
-							<div class="item-content">
-								<h4>{item.name}</h4>
-								<span class="price">$ {item.price}</span>
-								<div class="">
-									<div class="rating">
-										{"★".repeat(Math.floor(item.rating))}
-									</div>
-								</div>
-							</div>
-							
-						</div>
-					))}
-				</div>
-			</div>
-		))}
-	</div>
-
-	
+    <div class="products-grid">
+        {
+            products.map((category) => (
+                <div class="category">
+                    <h3>{category.category}</h3>
+                    <div class="items">
+                        {category.items.map((item) => (
+                            <div class="item">
+                                <div class="item-image-container">
+                                    <img
+                                        src={item.image}
+                                        alt={item.name}
+                                        class="item-image"
+                                    />
+                                </div>
+                                <div class="item-content">
+                                    <h4>{item.name}</h4>
+                                    <span class="price">$ {item.price}</span>
+                                    <div class="">
+                                        <div class="rating">
+                                            {"★".repeat(
+                                                Math.floor(item.rating),
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))
+        }
+    </div>
 </section>
 
-
 <style>
-.products {
-    padding: 6rem 2rem;
-}
+    .products {
+        padding: 6rem 2rem;
+    }
 
-h2 {
-    color: var(--yellow);
-    font-size: 4rem;
-    text-align: center;
-    margin-bottom: 4rem;
-    text-shadow:
-        3px 3px 0px rgba(255, 0, 0, 0.8),
-        7px 7px 10px rgba(0, 0, 0, 0.7);
-}
+    @media screen and (min-width: 768px) {
+        .products {
+            padding-bottom: 2rem;
+        }
+    }
 
-.products-grid {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
+    h2 {
+        color: var(--yellow);
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 4rem;
+        text-shadow:
+            3px 3px 0px rgba(255, 0, 0, 0.8),
+            7px 7px 10px rgba(0, 0, 0, 0.7);
+    }
 
-.category h3 {
-    color: var(--white);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-}
+    .products-grid {
+        font-family:
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            "Open Sans",
+            "Helvetica Neue",
+            sans-serif;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
 
-h3 {
-    font-family: 'Marker';
-}
+    .category h3 {
+        color: var(--white);
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
 
-.item {
-    background: rgb(0, 0, 0);
-    border-radius: 16px;
-    margin-bottom: 2rem;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    position: relative; /* Mantener el texto sobre la imagen */
-}
+    h3 {
+        font-family: "Marker";
+    }
 
-.item:hover .item-image {
-    transform: scale(1.1); /* Solo se hace zoom en la imagen */
-}
+    .item {
+        background: rgb(0, 0, 0);
+        border-radius: 16px;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        position: relative; /* Mantener el texto sobre la imagen */
+    }
 
-.item-image-container {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 1/0.5;
-}
+    .item:hover .item-image {
+        transform: scale(1.1); /* Solo se hace zoom en la imagen */
+    }
 
-.item-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.5;
-    transition: transform 0.3s ease;
-}
+    .item-image-container {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1/0.5;
+    }
 
-.item-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5)); /* Gradiente sutil */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+    .item-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+        transition: transform 0.3s ease;
+    }
 
-.item:hover .item-overlay {
-    opacity: 1;
-}
+    .item-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+        background: linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.5)
+        ); /* Gradiente sutil */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
 
-.item-content {
-    position: absolute; /* Fijar el contenido sobre la imagen */
-    bottom: 0; /* Fijar en la parte inferior */
-    left: 0;
-    right: 0;
-    padding: 1.5rem;
-    color: var(--white);
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)); /* Gradiente sutil */
-    text-align: center;
-    display: flex;
-    flex-direction: column; /* Asegurar que el texto se apile verticalmente */
-    justify-content: center; /* Centrar el contenido */
-    align-items: center; /* Alinear los elementos en el centro */
-}
+    .item:hover .item-overlay {
+        opacity: 1;
+    }
 
-.item-content h4 {
-    font-family: 'Marker';
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-    color: var(--white);
-    text-decoration: none; /* Eliminar subrayado */
-}
+    .item-content {
+        position: absolute; /* Fijar el contenido sobre la imagen */
+        bottom: 0; /* Fijar en la parte inferior */
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        color: var(--white);
+        background: linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.4)
+        ); /* Gradiente sutil */
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Asegurar que el texto se apile verticalmente */
+        justify-content: center; /* Centrar el contenido */
+        align-items: center; /* Alinear los elementos en el centro */
+    }
 
-.price {
-    font-family: 'Marker';
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--white);
-}
-
-.rating {
-    color: var(--yellow);
-    font-size: 2rem;
-    padding: 0.5rem;
-    border-radius: 8px;
-    display: inline-block;
-}
-
-/* Media query para dispositivos móviles */
-@media (max-width: 768px) {
     .item-content h4 {
-        font-size: 1.4rem; /* Reducir el tamaño del título */
+        font-family: "Marker";
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+        color: var(--white);
+        text-decoration: none; /* Eliminar subrayado */
     }
+
     .price {
-        font-size: 1.5rem; /* Reducir el tamaño del precio */
+        font-family: "Marker";
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--white);
     }
+
     .rating {
-        font-size: 1.5rem; /* Reducir el tamaño de las estrellas */
+        color: var(--yellow);
+        font-size: 2rem;
+        padding: 0.5rem;
+        border-radius: 8px;
+        display: inline-block;
     }
-}
 
+    /* Media query para dispositivos móviles */
+    @media (max-width: 768px) {
+        .item-content h4 {
+            font-size: 1.4rem; /* Reducir el tamaño del título */
+        }
+        .price {
+            font-size: 1.5rem; /* Reducir el tamaño del precio */
+        }
+        .rating {
+            font-size: 1.5rem; /* Reducir el tamaño de las estrellas */
+        }
+    }
 
-h4 {
-    font-family: 'Black';
-}
-
+    h4 {
+        font-family: "Black";
+    }
 </style>
