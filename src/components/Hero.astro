@@ -89,7 +89,6 @@
 		bottom: -65%; /* Ajusta la posición para moverlo más abajo */
 		width: 100%;
 		height: 100%; /* Asegúrate de que ocupe todo el contenedor */
-		overflow: hidden;
 		z-index: 2;
 		fill: var(--white);
 	}
@@ -141,12 +140,20 @@
 		.logo {
 			height: 200px; /* Un tamaño ligeramente más grande para móviles grandes */
 		}
+
+		p {
+			font-size: 1.5rem;
+		}
+
+		.hero-border {
+			bottom: -15%; /* Ajusta para un diseño más equilibrado */
+		}
 	}
 
 	/* Para móviles grandes (376px - 767px) */
 	@media (max-width: 768px) {
 		.hero-border {
-			bottom: -35%; /* Ajusta para un diseño más equilibrado */
+			bottom: -18%; /* Ajusta para un diseño más equilibrado */
 		}
 
 		.logo {
