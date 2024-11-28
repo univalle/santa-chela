@@ -1,10 +1,6 @@
 <section class="hero">
 	<div class="hero-content">
-		<img
-			src="/svg/santachela7.svg"
-			alt="Santa Chela Logo"
-			class="logo"
-		/>
+		<img src="/svg/santachela7.svg" alt="Santa Chela Logo" class="logo" />
 		<p>Donde los buenos momentos fluyen</p>
 	</div>
 	<div class="hero-background">
@@ -14,13 +10,15 @@
 		</video>
 		<div class="overlay"></div>
 	</div>
+	<div class="hero-border">
+		<img src="/svg/bg10.svg" alt="Decorative border" class="border-image" />
+	</div>
 	<!-- Señal para desplazarse hacia abajo -->
 	<a href="#products">
 		<div class="scroll-indicator">
 			<span class="scroll-icon">
-			<img src="/svg/down.svg"
-			alt="Scroll down">	
-			</span> <!-- Flecha hacia abajo -->
+				<img src="/svg/down.svg" alt="Scroll down" />
+			</span>
 		</div>
 	</a>
 </section>
@@ -76,7 +74,6 @@
 
 	.logo {
 		height: 400px;
-		
 	}
 
 	p {
@@ -85,9 +82,25 @@
 		font-size: 2rem;
 		color: var(--white);
 		font-weight: 100;
-		/* text-shadow:
-		3px 3px 0px rgba(255, 0, 0, 0.8),
-		7px 7px 10px rgba(0, 0, 0, 0.7); */
+	}
+
+	.hero-border {
+		position: absolute;
+		bottom: -65%; /* Ajusta la posición para moverlo más abajo */
+		width: 100%;
+		height: 100%; /* Asegúrate de que ocupe todo el contenedor */
+		overflow: hidden;
+		z-index: 2;
+		fill: var(--white);
+	}
+
+	.border-image {
+		width: 100%;
+		height: auto;
+		position: absolute;
+		bottom: 0;
+		transform: scaleX(1.2); /* Escala el SVG horizontalmente */
+		transform-origin: center; /* Mantén el escalado centrado */
 	}
 
 	/* Estilo para la señal de desplazamiento */
@@ -110,7 +123,8 @@
 	}
 
 	@keyframes bounce {
-		0%, 100% {
+		0%,
+		100% {
 			transform: translateY(0);
 		}
 		50% {
@@ -118,13 +132,39 @@
 		}
 	}
 
-	@media (max-width: 768px) {
-	.logo {
-		height: 200px; /* Reduce el tamaño del logo */
+
+	/* Para móviles pequeños (320px - 375px) */
+	@media (max-width: 375px) {
+		.hero-border {
+			bottom: -30%; /* Ajusta la posición para mantener proporción */
+		}
 	}
 
-	p {
-		font-size: 2rem; /* Reduce el tamaño del texto */
+	/* Para móviles grandes (376px - 767px) */
+	@media (max-width: 768px) {
+		.hero-border {
+			bottom: -35%; /* Ajusta para un diseño más equilibrado */
+		}
 	}
-}
+
+	/* Para tablets (768px - 1024px) */
+	@media (min-width: 769px) and (max-width: 1024px) {
+		.hero-border {
+			bottom: -35%; /* Ajusta la posición para mayor visibilidad */
+		}
+	}
+
+	/* Para laptops pequeñas y tablets en horizontal (1025px - 1280px) */
+	@media (min-width: 1025px) and (max-width: 1280px) {
+		.hero-border {
+			bottom: -45%; /* Ajusta la posición del borde */
+		}
+	}
+
+	/* Para pantallas grandes (1281px - 1920px) */
+	@media (min-width: 1281px) and (max-width: 1920px) {
+		.hero-border {
+			bottom: -65%; /* Más espacio para un diseño limpio */
+		}
+	}
 </style>
